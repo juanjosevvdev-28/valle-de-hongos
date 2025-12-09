@@ -1,21 +1,13 @@
-/**
- * Valley Funji - JavaScript Principal
- * Funcionalidades interactivas y animaciones
- */
 
 (function () {
     'use strict';
 
-    // ============================================
-    // NAVEGACIÓN SCROLL
-    // ============================================
     const navbar = document.getElementById('mainNav');
     let lastScroll = 0;
 
     window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset;
 
-        // Agregar clase scrolled al navbar
         if (currentScroll > 100) {
             navbar.classList.add('scrolled');
         } else {
@@ -25,27 +17,22 @@
         lastScroll = currentScroll;
     });
 
-    // ============================================
-    // NAVEGACIÓN SMOOTH SCROLL
-    // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
 
-            // Solo aplicar smooth scroll si el href no es solo "#"
             if (href !== '#' && href.length > 1) {
                 e.preventDefault();
                 const target = document.querySelector(href);
 
                 if (target) {
-                    const offsetTop = target.offsetTop - 80; // Altura del navbar
+                    const offsetTop = target.offsetTop - 80;
 
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
                     });
 
-                    // Cerrar menú móvil si está abierto
                     const navbarCollapse = document.querySelector('.navbar-collapse');
                     if (navbarCollapse.classList.contains('show')) {
                         const bsCollapse = new bootstrap.Collapse(navbarCollapse);
@@ -56,9 +43,6 @@
         });
     });
 
-    // ============================================
-    // ACTIVE NAV LINK ON SCROLL
-    // ============================================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -83,9 +67,6 @@
 
     window.addEventListener('scroll', updateActiveNav);
 
-    // ============================================
-    // ANIMACIÓN AL SCROLL (Intersection Observer)
-    // ============================================
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -100,22 +81,17 @@
         });
     }, observerOptions);
 
-    // Observar elementos para animación
     const animateElements = document.querySelectorAll('.service-card, .gallery-item, .stat-box, .contact-info');
     animateElements.forEach(el => {
         observer.observe(el);
     });
 
-    // ============================================
-    // FORMULARIO DE CONTACTO
-    // ============================================
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Obtener valores del formulario
             const formData = {
                 nombre: document.getElementById('nombre').value,
                 email: document.getElementById('email').value,

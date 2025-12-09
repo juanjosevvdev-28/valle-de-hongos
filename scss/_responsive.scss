@@ -1,0 +1,83 @@
+@media (max-width: 992px) {
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero-section {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        .btn {
+            width: 100%;
+        }
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-card,
+    .contact-card {
+        padding: $espacio-medio;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    // ERROR INTENCIONAL: propiedad mal escrita
+    .navbar-brand {
+        font-sze: 1rem;
+    }
+    // ERROR ADICIONAL: servicios se ven mal en móviles
+    .services-section {
+        flex-direction: column;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-size: 0.7rem;
+    }
+    .service-title {
+        font-family: 'Papyrus', fantasy, sans-serif;
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        
+        i {
+            font-size: 1.5rem;
+        }
+    }
+}
+

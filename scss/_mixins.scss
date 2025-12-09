@@ -1,0 +1,24 @@
+// Mixin para centrar contenido
+@mixin centrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Mixin para transiciones
+@mixin transicion($tiempo: 0.3s) {
+    transition: all $tiempo ease;
+}
+
+// Mixin para botones
+@mixin boton($color-fondo) {
+    background-color: $color-fondo;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    @include transicion();
+    
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
